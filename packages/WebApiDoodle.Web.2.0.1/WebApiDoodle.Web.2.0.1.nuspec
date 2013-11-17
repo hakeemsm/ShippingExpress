@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WebApiDoodle.Web</id>
+    <version>2.0.1</version>
+    <title>WebApiDoodle.Web</title>
+    <authors>Tugberk Ugurlu</authors>
+    <owners>Tugberk Ugurlu</owners>
+    <licenseUrl>https://raw.github.com/WebAPIDoodle/WebAPIDoodle/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/WebAPIDoodle/WebAPIDoodle</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>WebApiDoodle.Web is an ASP.NET Web API library which contains several useful Extensions, Filters, Message Handlers and so on and so forth.</description>
+    <copyright>Copyright Tugberk Ugurlu 2012</copyright>
+    <tags>aspnetwebapi aspnet webapi</tags>
+    <dependencies>
+      <dependency id="WebApiDoodle.Web.Meta" version="2.0.1" />
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="4.0.20710.0" />
+    </dependencies>
+  </metadata>
+</package>

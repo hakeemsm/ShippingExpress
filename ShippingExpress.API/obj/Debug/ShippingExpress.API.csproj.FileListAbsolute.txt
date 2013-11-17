@@ -20,3 +20,11 @@ C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\ShippingExpress.Domain.pdb
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\EntityFramework.xml
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\WebApiDoodle.Net.Http.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\WebApiDoodle.Net.Http.Formatting.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\WebApiDoodle.Web.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\WebApiDoodle.Web.Meta.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\WebApiDoodle.Net.Http.xml
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\WebApiDoodle.Net.Http.Formatting.xml
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\WebApiDoodle.Web.xml
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API\bin\Debug\WebApiDoodle.Web.Meta.xml

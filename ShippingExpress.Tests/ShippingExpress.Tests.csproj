@@ -67,7 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IocTests.cs" />
+    <Compile Include="MessageHandlerTests\RequireHttpsMessageHandlerTest.cs" />
+    <Compile Include="MessageHandlerTests\ShippingExpressAuthHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpers\DelegatingHandlerExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
