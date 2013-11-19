@@ -65,7 +65,7 @@ namespace ShippingExpress.API.MessageHandlers
             userName = decodedAuthHeader.Substring(0, sepPos).Trim();
             password = decodedAuthHeader.Substring(sepPos + 1).Trim();
 
-            return string.IsNullOrEmpty(userName);
+            return !string.IsNullOrEmpty(userName);
         }
 
         private Task<HttpResponseMessage> HandleUnauthenticatedRequestImpl(HttpRequestMessage request, CancellationToken cancellationToken)
