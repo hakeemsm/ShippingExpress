@@ -81,6 +81,8 @@
     <Compile Include="Services\OperationResult.cs" />
     <Compile Include="Services\UserWithRoles.cs" />
     <Compile Include="Services\ValidUserContext.cs" />
+    <Compile Include="Utils\TaskHelperExtensions.cs" />
+    <Compile Include="Utils\TaskHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
