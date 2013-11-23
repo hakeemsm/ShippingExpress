@@ -63,11 +63,118 @@ namespace ShippingExpress.Tests.MessageHandlerTests
 
         }
 
+        [Fact, NullUpCurrentPrincipal, GCForce]
+        public Task Current_Thread_Principal_Set_When_Authorization_Header_Is_Verified()
+        {
+            string userNamePwd = string.Format("{0}:{1}", UserName, Password);
+            var requestMessage = new HttpRequestMessage(HttpMethod.Get, "http://localhost");
+            requestMessage.Headers.Authorization=new AuthenticationHeaderValue("Basic",EncodeToBase64(userNamePwd));
+            var customBasicAuthHandler = new CustomBasicAuthHandler();
+            return TestHelper.InvokeMessageHandler(requestMessage, customBasicAuthHandler).ContinueWith(t =>
+            {
+                t.Status.ShouldBeEquivalentTo(TaskStatus.RanToCompletion);
+                Thread.CurrentPrincipal.Should().NotBeNull();
+                Thread.CurrentPrincipal.Should().BeAssignableTo<GenericPrincipal>();
+                
+            });
+        }
+
+        [Fact, NullUpCurrentPrincipal, GCForce]
+        public Task Suppresses_Auth_If_Already_Authenticated_And_Suppress_Requested()
+        {
+            Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(UserName), null);
+            var requestMessage = new HttpRequestMessage(HttpMethod.Get, "http://localhost");
+            var authHandler = new SuppressedCustomBasicAuthHandler();
+            return TestHelper.InvokeMessageHandler(requestMessage, authHandler).ContinueWith(t =>
+            {
+                t.Status.ShouldBeEquivalentTo(TaskStatus.RanToCompletion);
+                authHandler.IsAuthenticateUserCalled.Should().BeFalse();
+                t.Result.StatusCode.ShouldBeEquivalentTo(HttpStatusCode.OK);
+            });
+        }
+
+        [Fact, NullUpCurrentPrincipal, GCForce]
+        public Task Overridden_Handle_Unauthenticated_Request_Is_Honored_And_Response_Set()
+        {
+            string userNamePwd = string.Format("{0}:{1}", UserName, Password);
+            var requestMessage = new HttpRequestMessage(HttpMethod.Get, "http://localhost");
+            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Basic", EncodeToBase64(userNamePwd));
+            var unauthImpl = new CustomBasicAuthHandlerWithUnauthImpl();
+
+            return TestHelper.InvokeMessageHandler(requestMessage, unauthImpl).ContinueWith(t =>
+            {
+                t.Status.ShouldBeEquivalentTo(TaskStatus.RanToCompletion);
+                t.Result.StatusCode.ShouldBeEquivalentTo(HttpStatusCode.Ambiguous);
+
+            });
+        }
+
+        [Fact, NullUpCurrentPrincipal, GCForce]
+        public Task Overridden_Handle_Unauthenticated_Request_Is_Honored_And_InnerHandler_Called()
+        {
+            string userNamePwd = string.Format("{0}:{1}", UserName, Password);
+            var requestMessage = new HttpRequestMessage(HttpMethod.Get, "http://localhost");
+            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Basic", EncodeToBase64(userNamePwd));
+            var emptyUnauthImpl = new CustomBasicAuthHandlerWithEmptyUnauthImpl();
+
+            return TestHelper.InvokeMessageHandler(requestMessage, emptyUnauthImpl).ContinueWith(t =>
+            {
+                t.Status.ShouldBeEquivalentTo(TaskStatus.RanToCompletion);
+                t.Result.StatusCode.ShouldBeEquivalentTo(HttpStatusCode.OK);
+                Thread.CurrentPrincipal.Identity.IsAuthenticated.Should().BeFalse();
+            });
+        }
+
         private string EncodeToBase64(string value)
         {
             byte[] bytesToEncode = Encoding.UTF8.GetBytes(value);
             return Convert.ToBase64String(bytesToEncode);
         }
+    }
+
+    public class CustomBasicAuthHandlerWithEmptyUnauthImpl:BasicAuthenticationHandler
+    {
+        protected override Task<IPrincipal> AuthenticateUserAsync(HttpRequestMessage request, string userName, string password,
+            CancellationToken cancellation = new CancellationToken())
+        {
+            return TaskHelpers.FromResult<IPrincipal>(null);
+        }
+
+        protected override void HandleUnauthenticatedRequest(UnauthenticatedRequestContext unauthenticatedRequestContext)
+        {
+            
+        }
+    }
+
+    public class CustomBasicAuthHandlerWithUnauthImpl:BasicAuthenticationHandler
+    {
+        protected override Task<IPrincipal> AuthenticateUserAsync(HttpRequestMessage request, string userName, string password,
+            CancellationToken cancellation = new CancellationToken())
+        {
+            return TaskHelpers.FromResult<IPrincipal>(null);
+        }
+
+        protected override void HandleUnauthenticatedRequest(UnauthenticatedRequestContext context)
+        {
+            context.Response=new HttpResponseMessage(HttpStatusCode.Ambiguous);
+        }
+    }
+
+    public class SuppressedCustomBasicAuthHandler:BasicAuthenticationHandler
+    {
+
+        public SuppressedCustomBasicAuthHandler():base(true)
+        {
+            
+        }
+        protected override Task<IPrincipal> AuthenticateUserAsync(HttpRequestMessage request, string userName, string password,
+            CancellationToken cancellation = new CancellationToken())
+        {
+            IsAuthenticateUserCalled = true;
+            return TaskHelpers.FromResult<IPrincipal>(null);
+        }
+
+        public bool IsAuthenticateUserCalled { get; private set; }
     }
 
     internal class CustomBasicAuthHandler:BasicAuthenticationHandler

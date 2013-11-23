@@ -19,7 +19,7 @@ namespace ShippingExpress.API.MessageHandlers
         }
     }
 
-    internal class UnauthenticatedRequestContext
+    public class UnauthenticatedRequestContext
     {
         public UnauthenticatedRequestContext(HttpRequestMessage request)
         {

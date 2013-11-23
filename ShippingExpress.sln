@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShippingExpress.API.WebHost
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShippingExpress.Domain", "ShippingExpress.Domain\ShippingExpress.Domain.csproj", "{54A757F8-B586-41DC-B7D1-16894F6696B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShippingExpress.API.Model", "ShippingExpress.API.Model\ShippingExpress.API.Model.csproj", "{D225211D-0C82-4522-84B6-99A6DC7E2B94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{54A757F8-B586-41DC-B7D1-16894F6696B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54A757F8-B586-41DC-B7D1-16894F6696B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54A757F8-B586-41DC-B7D1-16894F6696B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D225211D-0C82-4522-84B6-99A6DC7E2B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D225211D-0C82-4522-84B6-99A6DC7E2B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D225211D-0C82-4522-84B6-99A6DC7E2B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D225211D-0C82-4522-84B6-99A6DC7E2B94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

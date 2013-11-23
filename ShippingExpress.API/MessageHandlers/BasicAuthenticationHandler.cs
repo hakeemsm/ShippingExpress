@@ -34,6 +34,16 @@ namespace ShippingExpress.API.MessageHandlers
                     string password;
                     if (TryExtractBasicAuthCredentialsFromHeader(request.Headers.Authorization.Parameter,out userName, out password))
                     {
+
+                        //AuthenticateUserAsync(request, userName, password).ContinueWith(t =>
+                        //{
+                        //    if (t.Result != null)
+                        //    {
+                        //        Thread.CurrentPrincipal = t.Result;
+                        //        return base.SendAsync(request, cancellationToken);
+                        //    }
+                        //    return HandleUnauthenticatedRequestImpl(request, cancellationToken);
+                        //});
                         return AuthenticateUserAsync(request, userName, password, cancellationToken).Then(p =>
                         {
                             if (p != null)
@@ -42,7 +52,7 @@ namespace ShippingExpress.API.MessageHandlers
                                 return base.SendAsync(request, cancellationToken);
                             }
                             return HandleUnauthenticatedRequestImpl(request, cancellationToken);
-                        },runSynchronously:true);
+                        }, runSynchronously: true);
                     }
                 }
                 return HandleUnauthenticatedRequestImpl(request, cancellationToken);
@@ -94,7 +104,7 @@ namespace ShippingExpress.API.MessageHandlers
                 response.RequestMessage = request;
         }
 
-        private void HandleUnauthenticatedRequest(UnauthenticatedRequestContext unauthenticatedRequestContext)
+        protected virtual void HandleUnauthenticatedRequest(UnauthenticatedRequestContext unauthenticatedRequestContext)
         {
             var responseMessage = unauthenticatedRequestContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
             responseMessage.Headers.Add("WWW-Authenticate",HttpBasicSchemeName);

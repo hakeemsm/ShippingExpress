@@ -14,6 +14,7 @@ namespace ShippingExpress.API.Config
         public static void Configure(HttpConfiguration configuration)
         {
             configuration.MessageHandlers.Add(new RequireHttpsMessageHandler());
+            configuration.MessageHandlers.Add(new ShippingExpressAuthHandler());
             var jqueryFormatter = configuration.Formatters.FirstOrDefault(x => x.GetType() == typeof (JQueryMvcFormUrlEncodedFormatter));
             configuration.Formatters.Remove(jqueryFormatter);
             configuration.Formatters.Remove(configuration.Formatters.FormUrlEncodedFormatter);

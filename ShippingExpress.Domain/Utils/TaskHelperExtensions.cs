@@ -64,9 +64,7 @@ namespace ShippingExpress.Domain.Utils
             {
                 var taskResult = source as Task<TResult>;
                 tcs.TrySetResult(taskResult == null ? default(TResult) : taskResult.Result);
-                return;
             }
-            return;
         }
         static Task<TOuterResult> ThenImpl<TTask, TOuterResult>(this TTask task,
             Func<TTask, Task<TOuterResult>> continuation, CancellationToken cancellationToken, bool runSynchronously,
@@ -82,7 +80,7 @@ namespace ShippingExpress.Domain.Utils
                 {
                     try
                     {
-                        continuation(task);
+                        return continuation(task);
                     }
                     catch (Exception e)
                     {
@@ -102,7 +100,7 @@ namespace ShippingExpress.Domain.Utils
             {
                 if (innerTask.IsFaulted)
                     tcs.TrySetException(innerTask.Exception.InnerExceptions);
-                else if (innerTask.IsCanceled || continueOnCapturedContext)
+                else if (innerTask.IsCanceled || cancellationToken.IsCancellationRequested)
                     tcs.TrySetCanceled();
                 else
                 {
