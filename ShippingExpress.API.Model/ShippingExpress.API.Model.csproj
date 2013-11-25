@@ -49,6 +49,8 @@
     <Compile Include="RequestCommands\IRequestCommand.cs" />
     <Compile Include="RequestCommands\MaximumAttribute.cs" />
     <Compile Include="RequestCommands\MinimumAttribute.cs" />
+    <Compile Include="RequestCommands\ShipmentRequestModel.cs" />
+    <Compile Include="RequestCommands\ShipmentUpdateRequestModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

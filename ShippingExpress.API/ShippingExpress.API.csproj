@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -65,9 +71,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\EntityMapping.cs" />
     <Compile Include="Config\IoCConfig.cs" />
     <Compile Include="Config\RouteConfig.cs" />
     <Compile Include="Config\WebAPIConfig.cs" />
+    <Compile Include="Controllers\ShipmentsController.cs" />
+    <Compile Include="InvalidModelStateFilterAttribute.cs" />
     <Compile Include="MessageHandlers\BasicAuthenticationHandler.cs" />
     <Compile Include="MessageHandlers\RequireHttpsMessageHandler.cs" />
     <Compile Include="MessageHandlers\ShippingExpressAuthHandler.cs" />
@@ -78,6 +87,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ShippingExpress.API.Model\ShippingExpress.API.Model.csproj">
+      <Project>{D225211D-0C82-4522-84B6-99A6DC7E2B94}</Project>
+      <Name>ShippingExpress.API.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShippingExpress.Domain\ShippingExpress.Domain.csproj">
       <Project>{54A757F8-B586-41DC-B7D1-16894F6696B4}</Project>
       <Name>ShippingExpress.Domain</Name>

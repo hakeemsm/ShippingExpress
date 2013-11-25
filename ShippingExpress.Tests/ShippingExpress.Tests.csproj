@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="FluentAssertions">
       <HintPath>..\packages\FluentAssertions.2.1.0.0\lib\net45\FluentAssertions.dll</HintPath>
     </Reference>
@@ -66,12 +72,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperTests.cs" />
+    <Compile Include="ControllerTests\Constants.cs" />
+    <Compile Include="ControllerTests\ShipmentControllerIntegrationTests.cs" />
     <Compile Include="IocTests.cs" />
     <Compile Include="MessageHandlerTests\BasicAuthenticationHandlerTests.cs" />
     <Compile Include="MessageHandlerTests\RequireHttpsMessageHandlerTest.cs" />
     <Compile Include="MessageHandlerTests\ShippingExpressAuthHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpers\DelegatingHandlerExtensions.cs" />
+    <Compile Include="TestHelpers\IntegrationTestHelper.cs" />
+    <Compile Include="TestHelpers\ServicesMockHelper.cs" />
     <Compile Include="TestHelpers\TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>

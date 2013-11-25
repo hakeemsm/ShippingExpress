@@ -47,7 +47,7 @@ namespace ShippingExpress.Domain.Entities
 
         [Required]
         [StringLength(50)]
-        public string ReceiverTelephone { get; set; }
+        public string ReceiverPhone { get; set; }
 
         [Required]
         [StringLength(300)]

@@ -5,7 +5,11 @@ using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using System.Web.Http.Validation;
 using System.Web.Http.Validation.Providers;
+using AutoMapper;
 using ShippingExpress.API.MessageHandlers;
+using ShippingExpress.API.Model.Dtos;
+using ShippingExpress.API.Model.RequestCommands;
+using ShippingExpress.Domain.Entities;
 
 namespace ShippingExpress.API.Config
 {
@@ -25,8 +29,12 @@ namespace ShippingExpress.API.Config
             configuration.Services.Replace(typeof(IContentNegotiator),new DefaultContentNegotiator(true));
             configuration.Services.RemoveAll(typeof (ModelValidatorProvider),
                 v => !(v is DataAnnotationsModelValidatorProvider));
-
+            configuration.ParameterBindingRules.Insert(0,d=>typeof(IRequestCommand).IsAssignableFrom(d.ParameterType)?new FromUriAttribute().GetBinding(d):null);
+            configuration.Filters.Add(new InvalidModelStateFilterAttribute());
+            
         }
+
+        
     }
 
     public class SuppressedRequiredMemberSelector : IRequiredMemberSelector

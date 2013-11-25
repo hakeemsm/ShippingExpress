@@ -1,0 +1,5 @@
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.Model\bin\Debug\ShippingExpress.API.Model.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.Model\bin\Debug\ShippingExpress.API.Model.pdb
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.Model\obj\Debug\ShippingExpress.API.Model.csprojResolveAssemblyReference.cache
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.Model\obj\Debug\ShippingExpress.API.Model.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.Model\obj\Debug\ShippingExpress.API.Model.pdb

@@ -15,7 +15,7 @@ namespace ShippingExpress.API.Model.Dtos
         public string ReceiverZipCode { get; set; }
         public string ReceiverCity { get; set; }
         public string ReceiverCountry { get; set; }
-        public string ReceiverTelephone { get; set; }
+        public string ReceiverPhone { get; set; }
         public string ReceiverEmail { get; set; }
         public DateTime CreatedOn { get; set; }
 
@@ -24,7 +24,11 @@ namespace ShippingExpress.API.Model.Dtos
             ShipmentStates { get; set; }
     }
 
-    public class ShipmentTypeDto
+    public class ShipmentTypeDto:IDto
     {
+        public Guid Key { get; set; }
+        public string CompanyName { get; set; }
+        public decimal Price { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }

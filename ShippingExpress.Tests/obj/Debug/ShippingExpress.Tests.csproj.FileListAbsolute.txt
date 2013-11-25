@@ -27,3 +27,8 @@ C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Test
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Tests\bin\Debug\StructureMap.pdb
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Tests\bin\Debug\StructureMap.xml
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Tests\bin\Debug\EntityFramework.xml
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Tests\bin\Debug\AutoMapper.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Tests\bin\Debug\AutoMapper.Net4.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Tests\bin\Debug\ShippingExpress.API.Model.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Tests\bin\Debug\AutoMapper.xml
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.Tests\bin\Debug\ShippingExpress.API.Model.pdb

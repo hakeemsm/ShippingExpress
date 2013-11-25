@@ -22,3 +22,8 @@ C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.WebHost\bin\ShippingExpress.Domain.dll
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.WebHost\bin\ShippingExpress.Domain.pdb
 C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.WebHost\bin\EntityFramework.xml
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.WebHost\bin\AutoMapper.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.WebHost\bin\AutoMapper.Net4.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.WebHost\bin\ShippingExpress.API.Model.dll
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.WebHost\bin\AutoMapper.xml
+C:\Users\hakeemsm\Documents\Learning\WebAPI\ShippingExpress\ShippingExpress.API.WebHost\bin\ShippingExpress.API.Model.pdb

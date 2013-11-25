@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Http;
+using AutoMapper;
 using ShippingExpress.API.Config;
 using ShippingExpress.API.WebHost.App_Start;
 
@@ -15,6 +16,8 @@ namespace ShippingExpress.API.WebHost
             WebAPIConfig.Configure(configuration);
             IoCConfig.Initialize(configuration);
             EFConfig.Initialize();
+            EntityMapping.ConfigureAutoMapper();
+
         }
 
         protected void Session_Start(object sender, EventArgs e)
