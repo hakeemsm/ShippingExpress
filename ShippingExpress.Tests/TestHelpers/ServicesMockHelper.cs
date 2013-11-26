@@ -2,6 +2,7 @@
 using System.Security.Principal;
 using NSubstitute;
 using ShippingExpress.Domain.Services;
+using ShippingExpress.Tests.Common;
 using ShippingExpress.Tests.ControllerTests;
 
 namespace ShippingExpress.Tests.TestHelpers

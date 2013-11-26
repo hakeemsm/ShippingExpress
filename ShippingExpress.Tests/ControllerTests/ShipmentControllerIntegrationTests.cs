@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using NSubstitute;
+using ShippingExpress.API.Model.Dtos;
 using ShippingExpress.Domain.Entities;
 using ShippingExpress.Domain.Entities.Extensions;
 using ShippingExpress.Domain.Services;
+using ShippingExpress.Tests.Common;
 using ShippingExpress.Tests.MessageHandlerTests;
 using ShippingExpress.Tests.TestHelpers;
 using StructureMap;
@@ -16,11 +19,15 @@ namespace ShippingExpress.Tests.ControllerTests
 {
     public class ShipmentControllerIntegrationTests
     {
+        private const string ApiBaseRequestPath = "api/shipments";
+
         [Fact, NullUpCurrentPrincipal]
         public Task Returns_200_And_Shipments_If_Request_Authorized()
         {
             HttpConfiguration httpConfig = IntegrationTestHelper.GetInitialIntegrationTestConfig(GetContainer());
-            throw new NotImplementedException();
+            HttpRequestMessage request = HttpRequestMessageHelper.ConstructRequest(HttpMethod.Get, string.Format("https://localhost/{0}?page={1}&take={2}", ApiBaseRequestPath, 1, 1), 
+                "application/json", Constants.ValidAdminUserName, Constants.ValidAdminPassword);
+            return IntegrationTestHelper.TestPaginatedDtoAsync<ShipmentDto>(httpConfig, request, 1, 2, 2, 3, true, false);
         }
 
         private IContainer GetContainer()

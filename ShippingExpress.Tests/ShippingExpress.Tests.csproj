@@ -73,7 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperTests.cs" />
-    <Compile Include="ControllerTests\Constants.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\MediaExtensions.cs" />
     <Compile Include="ControllerTests\ShipmentControllerIntegrationTests.cs" />
     <Compile Include="IocTests.cs" />
     <Compile Include="MessageHandlerTests\BasicAuthenticationHandlerTests.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="MessageHandlerTests\ShippingExpressAuthHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpers\DelegatingHandlerExtensions.cs" />
+    <Compile Include="TestHelpers\HttpRequestMessageHelper.cs" />
     <Compile Include="TestHelpers\IntegrationTestHelper.cs" />
     <Compile Include="TestHelpers\ServicesMockHelper.cs" />
     <Compile Include="TestHelpers\TestHelper.cs" />
@@ -89,6 +91,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ShippingExpress.API.Model\ShippingExpress.API.Model.csproj">
+      <Project>{D225211D-0C82-4522-84B6-99A6DC7E2B94}</Project>
+      <Name>ShippingExpress.API.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShippingExpress.API\ShippingExpress.API.csproj">
       <Project>{BE677742-D82B-424D-A3C5-F493F8168FD7}</Project>
       <Name>ShippingExpress.API</Name>
