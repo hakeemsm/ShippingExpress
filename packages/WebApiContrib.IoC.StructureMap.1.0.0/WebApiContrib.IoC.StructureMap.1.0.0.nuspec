@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WebApiContrib.IoC.StructureMap</id>
+    <version>1.0.0</version>
+    <authors>Hakeem S Mohammad</authors>
+    <owners>Hakeem S Mohammad</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>StructureMap DI for ASP.NET WebAPI</description>
+    <releaseNotes>Upgraded to .NET 4.5.1</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <dependencies>
+      <dependency id="StructureMap" version="2.6.4.1" />
+    </dependencies>
+  </metadata>
+</package>

@@ -15,7 +15,7 @@ namespace ShippingExpress.Tests.TestHelpers
         public static HttpConfiguration GetInitialIntegrationTestConfig(IContainer container)
         {
             HttpConfiguration config = GetInitialIntegrationTestConfig();
-            IoCConfig.Initialize(config);
+            IoCConfig.Initialize(config,container);
             return config;
         }
 

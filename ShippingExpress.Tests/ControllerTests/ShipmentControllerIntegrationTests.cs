@@ -19,7 +19,7 @@ namespace ShippingExpress.Tests.ControllerTests
 {
     public class ShipmentControllerIntegrationTests
     {
-        private const string ApiBaseRequestPath = "api/shipments";
+        private const string ApiBaseRequestPath = "shippingapi/shipments";
 
         [Fact, NullUpCurrentPrincipal]
         public Task Returns_200_And_Shipments_If_Request_Authorized()
@@ -48,6 +48,7 @@ namespace ShippingExpress.Tests.ControllerTests
         {
             return new Container(x =>
             {
+                
                 x.For<IMembershipService>().Use(ServicesMockHelper.GetMembershipServiceMock());
                 x.For<IShipmentService>().Use(shipmentService);
             });

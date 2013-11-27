@@ -13,8 +13,6 @@ namespace ShippingExpress.Tests
         {
             var container = IoCConfig.RegisterServices();
             container.AssertConfigurationIsValid();
-            //container.GetInstance<IEntityRepository<User>>().Should().NotBeNull();
-
         }
     }
 }

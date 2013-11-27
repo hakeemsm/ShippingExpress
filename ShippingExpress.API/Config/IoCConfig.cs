@@ -15,7 +15,7 @@ namespace ShippingExpress.API.Config
             Initialize(config, RegisterServices());
         }
 
-        private static void Initialize(HttpConfiguration config, IContainer container)
+        public static void Initialize(HttpConfiguration config, IContainer container)
         {
             config.DependencyResolver = new StructureMapResolver(container);
         }
